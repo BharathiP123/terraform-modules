@@ -83,3 +83,9 @@ variable "nat_tags"{
     type = map
     default = {}
 }
+
+variable "peering" {
+    type = string
+    default = "true"
+      
+}

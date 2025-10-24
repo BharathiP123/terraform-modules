@@ -49,7 +49,7 @@ resource "aws_vpc" "main" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.private_cidrs[count.index]
   availability_zone = local.azs[count.index]
-  map_public_ip_on_launch = true
+  
 
   tags = merge(
     var.private_tags,
@@ -67,7 +67,7 @@ resource "aws_vpc" "main" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.database_cidrs[count.index]
   availability_zone = local.azs[count.index]
-  map_public_ip_on_launch = true
+  
 
   tags = merge(
     var.database_tags,
