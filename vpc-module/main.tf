@@ -188,3 +188,9 @@ resource "aws_route_table_association" "databasesubnet_associat" {
  route_table_id = aws_route_table.database_routetable.id
 }
 
+resource "aws_ssm_parameter" "vpcid_ssm" {
+  name  = "${var.project}/${var.environment}/vpc_id"
+  type  = "String"
+  value = aws_vpc.main.id
+}
+
