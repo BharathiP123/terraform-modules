@@ -197,18 +197,18 @@ resource "aws_ssm_parameter" "vpcid_ssm" {
 resource "aws_ssm_parameter" "publich_subnet_ids" {
   name  = "/${var.project}/${var.environment}/public_sub_ids"
   type  = "StringList"
-  value = aws_subnet.pbulicsubnets[count.index].id
+  value = join("," ,aws_subnet.pbulicsubnets)
 }
 
 ##storing the private subnet id's in ssm
 resource "aws_ssm_parameter" "private_subnet_ids" {
   name  = "/${var.project}/${var.environment}/private_sub_ids"
   type  = "StringList"
-  value = aws_subnet.private_subnets[count.index].id
+  value = join("," ,aws_subnet.private_subnets)
 }
 ###storing thee database subnet id's in ssm
 resource "aws_ssm_parameter" "database_subnet_ids" {
   name  = "/${var.project}/${var.environment}/database_sub_ids"
   type  = "StringList"
-  value = aws_subnet.aws_subnet.databasesubnets[count.index].id
+  value = join("," ,aws_subnet.aws_subnet.databasesubnets)
 }
