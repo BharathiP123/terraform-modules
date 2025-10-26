@@ -189,7 +189,7 @@ resource "aws_route_table_association" "databasesubnet_associat" {
 }
 
 resource "aws_ssm_parameter" "vpcid_ssm" {
-  name  = "${var.project}/${var.environment}/vpc_id"
+  name  = "/${var.project}/${var.environment}/vpcid_ssm"
   type  = "String"
   value = aws_vpc.main.id
 }
