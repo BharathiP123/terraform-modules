@@ -210,5 +210,5 @@ resource "aws_ssm_parameter" "private_subnet_ids" {
 resource "aws_ssm_parameter" "database_subnet_ids" {
   name  = "/${var.project}/${var.environment}/database_sub_ids"
   type  = "StringList"
-  value = join("," ,aws_subnet.aws_subnet.databasesubnets)
+  value = join("," ,aws_subnet.databasesubnets)
 }
