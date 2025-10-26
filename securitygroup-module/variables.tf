@@ -20,3 +20,9 @@ variable "vpcid" {
     type = string
   
 }
+
+variable "sg_tags" {
+    type = map
+    default = {}
+  
+}
