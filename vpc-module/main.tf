@@ -187,7 +187,7 @@ resource "aws_route_table_association" "databasesubnet_associat" {
  subnet_id = aws_subnet.databasesubnets[count.index].id
  route_table_id = aws_route_table.database_routetable.id
 }
-
+## ssm parameter creation for vpcid
 resource "aws_ssm_parameter" "vpcid_ssm" {
   name  = "/${var.project}/${var.environment}/vpcid_ssm"
   type  = "String"
